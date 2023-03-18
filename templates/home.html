@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    @media screen and (max-width: 768px) {
+  /* CSS styles for tablets */
+}
+
+@media screen and (max-width: 480px) {
+  /* CSS styles for smartphones */
+}
+      body {
+  margin: 0;
+  padding: 0;
+  background-color: #efefef;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Navbar */
+.mobile-menu,
+.mob-menu-container,
+.mob-menu-wrap {
+  display: none;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 16px 56px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 2px 10px 2px rgba(33, 33, 33, 0.015);
+          box-shadow: 0 2px 10px 2px rgba(33, 33, 33, 0.015);
+}
+
+.logo img {
+  width: 55px;
+}
+
+.menu-sec ul.nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.menu-sec ul li {
+  list-style: none;
+  margin: 0 24px;
+  font-size: 15px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.menu-sec ul li a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.menu-sec ul li a.active {
+  color: #ff6656 !important;
+}
+
+.menu-sec ul li a:hover {
+  color: #ff6656 !important;
+}
+
+.social-icons i {
+  font-size: 19px;
+  margin: 0 9px;
+}
+
+.social-icons i:hover {
+  color: #ff6656;
+  cursor: pointer;
+}
+
+.body-content {
+  height: 88vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #ffffff;
+}
+
+.footer p {
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.65px;
+}
+
+.footer p a {
+  text-decoration: none;
+  color: #ff6656;
+}
+
+/* Mobile Responsiveness CSS */
+@media only screen and (max-width: 650px) {
+  .desktop-menu {
+    display: none;
+  }
+  .mob-menu-container,
+  .mob-menu-wrap {
+    display: none;
+  }
+  .displayon {
+    display: block;
+  }
+  .mobile-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 16px 26px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 2px 10px 2px rgba(33, 33, 33, 0.075);
+            box-shadow: 0 2px 10px 2px rgba(33, 33, 33, 0.075);
+  }
+  .mobile-menu .logo img {
+    width: 110px;
+    margin-top: 3px;
+  }
+  .mobile-menu button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    text-transform: uppercase;
+  }
+  .mob-menu-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .mob-menu-container img {
+    width: 22px;
+    position: fixed;
+    z-index: 3;
+    top: 22px;
+    left: 28px;
+    cursor: pointer;
+  }
+  .mob-menu-wrap {
+    width: 80%;
+    background-color: #ffffff;
+    -webkit-box-shadow: -2px 0 10px 2px rgba(33, 33, 33, 0.045);
+            box-shadow: -2px 0 10px 2px rgba(33, 33, 33, 0.045);
+    z-index: 2;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    -webkit-transition: linear 3s;
+    transition: linear 3s;
+  }
+  .mob-menu-wrap .menu-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .mob-menu-wrap .menu-content .menu-items {
+    margin-top: 40px;
+  }
+  .mob-menu-wrap .menu-content .menu-items ul {
+    padding: 0;
+    text-align: center;
+  }
+  .mob-menu-wrap .menu-content .menu-items ul li {
+    list-style-type: none;
+    margin: 46px 0;
+  }
+  .mob-menu-wrap .menu-content .menu-items ul li a {
+    text-decoration: none;
+    color: #000000;
+  }
+  .mob-menu-wrap .menu-content .menu-items ul li a.active {
+    color: #ff6656;
+  }
+  .mob-menu-wrap .menu-content .social-items {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  .body-content {
+    height: calc(100vh - 135px);
+  }
+  .footer p {
+    font-size: 13px;
+    z-index: -1;
+  }
+}
+/*# sourceMappingURL=style.css.map */
+    </style>
+    <style>
+.chat-bar-collapsible {
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.collapsible {
+    background-color: rgb(82, 151, 255);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 350px;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    border-radius: 10px 10px 0px 0px;
+    border: 3px solid white;
+    border-bottom: none;
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
+
+.full-chat-block {
+    width: 350px;
+    background: white;
+    text-align: center;
+    overflow: auto;
+    scrollbar-width: none;
+    height: max-content;
+    transition: max-height 0.2s ease-out;
+}
+
+.outer-container {
+    min-height: 500px;
+    bottom: 0%;
+    position: relative;
+}
+
+.chat-container {
+    max-height: 500px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    scroll-behavior: smooth;
+    hyphens: auto;
+}
+
+.chat-container::-webkit-scrollbar {
+    display: none;
+}
+
+.chat-bar-input-block {
+    display: flex;
+    float: left;
+    box-sizing: border-box;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    background-color: rgb(235, 235, 235);
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px 0px 10px 10px;
+}
+
+.chat-bar-icons {
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    width: 25%;
+    float: right;
+    font-size: 20px;
+}
+
+#chat-icon:hover {
+    opacity: .7;
+}
+
+/* Chat bubbles */
+
+#userInput {
+    width: 75%;
+}
+
+.input-box {
+    float: left;
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    color: #000;
+    background-color: white;
+    outline: none
+}
+
+.userText {
+    color: white;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: right;
+    clear: both;
+}
+
+.userText span {
+    line-height: 1.5em;
+    display: inline-block;
+    background: #5ca6fa;
+    padding: 10px;
+    border-radius: 8px;
+    border-bottom-right-radius: 2px;
+    max-width: 80%;
+    margin-right: 10px;
+    animation: floatup .5s forwards
+}
+
+.botText {
+    color: #000;
+    font-family: Helvetica;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: left;
+}
+
+.botText span {
+    line-height: 1.5em;
+    display: inline-block;
+    background: #e0e0e0;
+    padding: 10px;
+    border-radius: 8px;
+    border-bottom-left-radius: 2px;
+    max-width: 80%;
+    margin-left: 10px;
+    animation: floatup .5s forwards
+}
+
+@keyframes floatup {
+    from {
+        transform: translateY(14px);
+        opacity: .0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .full-chat-block {
+        width: 100%;
+        border-radius: 0px;
+    }
+    .chat-bar-collapsible {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+    .collapsible {
+        width: 100%;
+        border: 0px;
+        border-top: 3px solid white;
+        border-radius: 0px;
+    }
+}
+</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HLI</title>
+
+    <link rel="stylesheet" href="static/css/chat.css">
+    <link rel="stylesheet" href="static/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Responsive HTML5 CSS3 Navigation Menu - No Framework</title>
+    <link rel="icon" href="favicon.png" type="image/png" sizes="16x16" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="navbar desktop-menu">
+      <div class="logo">
+        <a href="#"><img src="https://e0.pxfuel.com/wallpapers/440/89/desktop-wallpaper-life-insurance-flare-medical-insurance-thumbnail.jpg"  /></a>
+      </div>
+      <div id="menuSection" class="menu-sec">
+        <ul class="nav-menu">
+            <li> <a href="adminlogin">admin</a></li>
+          <li><a class="active" href="#">Home</a></li>
+          <li><a href="aboutus">About</a></li>
+          <li><a href="policys">policys</a></li>
+          <li><a href="contact us">Contact us</a></li>
+
+
+        </ul>
+      </div>
+      <a class="social-icons">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i href="https://www.w3schools.com/howto/howto_css_social_media_buttons.asp" class="fab fa-github"></i>
+
+       <a href='register'><button>SIGNUP</button></a>
+
+
+
+    </div>
+    <div
+      onclick="closeMobMenuToggle()"
+      id="mobMenuCont"
+      class="mob-menu-container"
+    >
+      <img src="src/close.png" alt="close-icon" />
+    </div>
+    <div id="mobMenuWrap" class="mob-menu-wrap">
+      <div class="menu-content">
+        <div class="menu-items">
+          <ul class="nav-menu">
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="social-items">
+          <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-github"></i>
+            <i class="fas fa-basketball-ball"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-menu">
+      <div class="logo">
+        <a href="#"><img src="src/logo.png" alt="my-logo" /></a>
+      </div>
+      <button onclick="mobMenuToggle()" class="menu">Menu</button>
+    </div>
+    <div class="body-content">
+      <p><img src="../static/image/LI2.jpg"  width="1510" height="620"></p>
+    </div>
+    <div class="footer">
+      <p>
+        Copyright © 2021 | Developed by
+        <a href="https://l.instagram.com/?u=https%3A%2F%2Fgangireddyb03.wixsite.com%2Fgangireddy&e=AT1AJXMFWM2MnCF3R04euS0n_GMKHPDAtzHHLydm4jZSWQQGaW0MQ9jLjZ3McLWS0VJusf7MD5J4YhyJYDJlRNBWAd-wZ4m6fJHzuD4" target="_blank">BGR</a>
+      </p>
+    </div>
+    <script type="text/javascript" src="src/script.js"></script>
+<!-- CHAT BAR BLOCK -->
+    <div class="chat-bar-collapsible">
+        <button id="chat-button" type="button" class="collapsible">Chat with us!
+            <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+        </button>
+
+        <div class="content">
+            <div class="full-chat-block">
+                <!-- Message Container -->
+                <div class="outer-container">
+                    <div class="chat-container">
+                        <!-- Messages -->
+                        <div id="chatbox">
+                            <h5 id="chat-timestamp"></h5>
+                            <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                        </div>
+
+                        <!-- User input box -->
+                        <div class="chat-bar-input-block">
+                            <div id="userInput">
+                                <input id="textInput" class="input-box" type="text" name="msg"
+                                    placeholder="Tap 'Enter' to send a message">
+                                <p></p>
+                            </div>
+
+                            <div class="chat-bar-icons">
+                                <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                    onclick="heartButton()"></i>
+                                <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                    onclick="sendButton()"></i>
+                            </div>
+                        </div>
+
+                        <div id="chat-bar-bottom">
+                            <p></p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+  </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="static/scripts/responses.js"></script>
+<script src="static/scripts/chat.js"></script>
+<script>
+function getBotResponse(input) {
+    //rock paper scissors
+    if (input == "rock") {
+        return "paper";
+    }
+else if (input == "paper") {
+        return "cut";
+
+    }
+else if (input == "paper") {
+        return "scissors";
+
+    }
+else if (input == "scissors") {
+        return "rock";
+    }
+
+    // Simple responses
+    if (input == "hello") {
+        return "Hello there!";
+    }
+else if (input == "how can i book policy") {
+        return "please refer policys!";
+    }
+
+    else if (input == "what are policys available") {
+        return "long term policy,life insurance";
+    }
+ else if (input == "goodbye") {
+        return "Talk to you later!";
+    }
+
+ else {
+        return "Try asking something else!";
+    }
+}
+</script>
+<script>
+// Collapsible
+var coll = document.getElementsByClassName("collapsible");
+
+for (let i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+
+        var content = this.nextElementSibling;
+
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+
+    });
+}
+
+function getTime() {
+    let today = new Date();
+    hours = today.getHours();
+    minutes = today.getMinutes();
+
+    if (hours < 10) {
+        hours = "0" + hours;
+    }
+
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+
+    let time = hours + ":" + minutes;
+    return time;
+}
+
+// Gets the first message
+function firstBotMessage() {
+    let firstMessage = "How's it going?"
+    document.getElementById("botStarterMessage").innerHTML = '<p class="botText"><span>' + firstMessage + '</span></p>';
+
+    let time = getTime();
+
+    $("#chat-timestamp").append(time);
+    document.getElementById("userInput").scrollIntoView(false);
+}
+
+firstBotMessage();
+
+// Retrieves the response
+function getHardResponse(userText) {
+    let botResponse = getBotResponse(userText);
+    let botHtml = '<p class="botText"><span>' + botResponse + '</span></p>';
+    $("#chatbox").append(botHtml);
+
+    document.getElementById("chat-bar-bottom").scrollIntoView(true);
+}
+
+//Gets the text text from the input box and processes it
+function getResponse() {
+    let userText = $("#textInput").val();
+
+    if (userText == "") {
+        userText = "I love Code Palace!";
+    }
+
+    let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
+
+    $("#textInput").val("");
+    $("#chatbox").append(userHtml);
+    document.getElementById("chat-bar-bottom").scrollIntoView(true);
+
+    setTimeout(() => {
+        getHardResponse(userText);
+    }, 1000)
+
+}
+
+// Handles sending text via button clicks
+function buttonSendText(sampleText) {
+    let userHtml = '<p class="userText"><span>' + sampleText + '</span></p>';
+
+    $("#textInput").val("");
+    $("#chatbox").append(userHtml);
+    document.getElementById("chat-bar-bottom").scrollIntoView(true);
+
+    //Uncomment this if you want the bot to respond to this buttonSendText event
+    // setTimeout(() => {
+    //     getHardResponse(sampleText);
+    // }, 1000)
+}
+
+function sendButton() {
+    getResponse();
+}
+
+function heartButton() {
+    buttonSendText("❤")
+}
+
+
+// Press enter to send a message
+$("#textInput").keypress(function (e) {
+    if (e.which == 13) {
+        getResponse();
+    }
+});
+</script>
+</html>
